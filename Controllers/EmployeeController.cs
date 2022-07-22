@@ -20,9 +20,9 @@ namespace ProjectAPI.Controllers
             this.employeeModelRepo = employeeModelRepo;
         }
         [HttpGet]
-        [Route("MyDetails/{id}")]
+        [Route("MyDetails/{id?}")]
 
-        public async Task<IActionResult> MyDetails_Id(int? id)
+        public async Task<IActionResult> MyDetails_Id(int id)
         {
             var get_details = await employeeModelRepo.MyDetailsAsync(id);
             return Ok(get_details);
